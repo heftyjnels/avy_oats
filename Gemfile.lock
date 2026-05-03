@@ -275,7 +275,7 @@ GEM
       rails (>= 6.1.0)
     orm_adapter (0.5.0)
     ostruct (0.6.3)
-    pagy (43.5.1)
+    pagy (43.5.3)
       json
       uri
       yaml
@@ -538,7 +538,7 @@ DEPENDENCIES
   name_of_person (~> 1.0)
   nokogiri (>= 1.12.5)
   noticed (~> 3.0)
-  pagy (~> 43.0)
+  pagy (~> 43.5)
   pay (~> 11.0)
   pg
   prefixed_ids (~> 1.2)
@@ -667,7 +667,7 @@ CHECKSUMS
   noticed (3.0.0) sha256=cbb28f1624b9034117fbe7e1d36facfe624e9ad53a24aa149e2a676336ff8f98
   orm_adapter (0.5.0) sha256=aa5d0be5d540cbb46d3a93e88061f4ece6a25f6e97d6a47122beb84fe595e9b9
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
-  pagy (43.5.1) sha256=ca5aaa6d65d21eee67a48fe8801d022d07ee72afbc5bea6a9e21b13a27b7c0b9
+  pagy (43.5.3) sha256=f9d73e690648d484706661dcb815647775cf8330fcc5c6e62ec87b9df431290b
   parallel (2.0.1) sha256=337782d3e39f4121e67563bf91dd8ece67f48923d90698614773a0ec9a5b2c7d
   parser (3.3.11.1) sha256=d17ace7aabe3e72c3cc94043714be27cc6f852f104d81aa284c2281aecc65d54
   pay (11.6.1) sha256=3597c75e049fce03906c367f693c9f43e0b0367166d1a1e4a83885aab3526e5d
