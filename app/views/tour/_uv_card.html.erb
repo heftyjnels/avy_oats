@@ -1,0 +1,18 @@
+<section class="uv-card py-6" aria-label="UV forecast">
+  <div class="rounded-lg border border-walnut-200 bg-sand-100 p-5 shadow-sm">
+    <header class="flex items-center justify-between gap-3">
+      <h2 class="text-xl font-semibold text-walnut-900">UV index</h2>
+      <span class="weather-badge weather-badge--forecast" aria-label="Data source: Forecast">Forecast</span>
+    </header>
+
+    <% if uv.present? %>
+      <div class="mt-3 flex items-baseline gap-3">
+        <p class="text-4xl font-semibold text-walnut-900"><%= uv.uv_max %></p>
+        <p class="text-lg font-medium text-clay-700"><%= uv.category %></p>
+      </div>
+      <p class="mt-1 text-sm text-ink-700">Daily max for <%= uv.date_label %> · forecast from Open-Meteo</p>
+    <% else %>
+      <%= render "tour/source_failed", source: "UV", error: error %>
+    <% end %>
+  </div>
+</section>

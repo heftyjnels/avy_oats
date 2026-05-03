@@ -1,0 +1,26 @@
+<%= render "tour/masthead", fetched_at: @snapshot.fetched_at %>
+
+<%= render "tour/avalanche_strip", avalanche: @snapshot.avalanche, error: @snapshot.errors[:avalanche] %>
+
+<div class="tour-container">
+  <%= render "tour/weather_block", weather: @snapshot.weather, error: @snapshot.errors[:weather] %>
+
+  <%= render "tour/uv_card", uv: @snapshot.uv, error: @snapshot.errors[:uv] %>
+
+  <%= render "tour/camera_strip",
+    title: "Little Cottonwood",
+    description: "Road and canyon cameras pulled from UDOT.",
+    cameras: @snapshot.cameras[:little_cottonwood] %>
+
+  <%= render "tour/camera_strip",
+    title: "Big Cottonwood",
+    description: "Road and canyon cameras pulled from UDOT.",
+    cameras: @snapshot.cameras[:big_cottonwood] %>
+
+  <%= render "tour/camera_strip",
+    title: "Resort cameras",
+    description: "Snow stake and on-mountain views from each resort.",
+    cameras: @snapshot.cameras[:resorts] %>
+</div>
+
+<%= render "tour/footer", snapshot: @snapshot %>

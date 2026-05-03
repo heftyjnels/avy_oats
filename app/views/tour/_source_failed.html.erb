@@ -1,0 +1,7 @@
+<div class="source-failed rounded-md border border-clay-200 bg-clay-50 p-4 text-sm text-ink-800" role="status">
+  <p class="font-medium text-walnut-900"><%= source %> data temporarily unavailable.</p>
+  <p>We will retry on the next page load. Other sections on this page are still live.</p>
+  <% if Rails.env.development? && error.present? %>
+    <p class="mt-1 font-mono text-xs text-clay-700">debug: <%= error %></p>
+  <% end %>
+</div>

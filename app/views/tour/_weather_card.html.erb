@@ -1,0 +1,29 @@
+<article class="weather-card rounded-lg border border-walnut-200 bg-sand-100 p-4 shadow-sm">
+  <header class="flex items-start justify-between gap-2">
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-ink-700"><%= title %></h3>
+      <p class="mt-1 text-2xl font-semibold text-walnut-900">
+        <% if missing || latest.nil? %>
+          <span class="text-ink-700">—</span>
+        <% else %>
+          <%= latest %><span class="text-base font-medium text-ink-700"> <%= unit %></span>
+        <% end %>
+      </p>
+    </div>
+    <span class="weather-badge weather-badge--<%= badge %>" aria-label="Data source: <%= badge_label %>">
+      <%= badge_label %>
+    </span>
+  </header>
+
+  <div class="weather-card__chart mt-3 h-24"
+       data-controller="weather-chart"
+       data-weather-chart-type-value="<%= chart_type %>"
+       data-weather-chart-unit-value="<%= unit %>"
+       data-weather-chart-data-value="<%= series.to_json %>">
+    <canvas data-weather-chart-target="canvas" aria-hidden="true"></canvas>
+  </div>
+
+  <% if missing %>
+    <p class="mt-2 text-xs text-ink-700">No recent data from this station.</p>
+  <% end %>
+</article>

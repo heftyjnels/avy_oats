@@ -1,0 +1,37 @@
+<section class="avalanche-strip sticky top-0 z-20 border-y border-walnut-200 bg-clay-50/95 backdrop-blur" aria-label="Salt Lake avalanche conditions">
+  <div class="tour-container py-4">
+    <% if avalanche.present? %>
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div class="flex items-center gap-4">
+          <div
+            class="avalanche-rose"
+            data-controller="avalanche-rose"
+            data-avalanche-rose-rose-value="<%= avalanche.rose.to_json %>"
+            role="img"
+            aria-label="Avalanche danger rose for the Salt Lake region">
+            <svg data-avalanche-rose-target="svg" viewBox="0 0 120 120" width="96" height="96" aria-hidden="true"></svg>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-wide text-ink-700">Salt Lake region</p>
+            <p class="text-2xl font-semibold text-walnut-900">
+              <%= avalanche.overall_danger_label %>
+              <span class="text-base font-medium text-ink-700">danger</span>
+            </p>
+            <p class="text-sm text-ink-700"><%= avalanche.issued_label %></p>
+          </div>
+        </div>
+        <div class="max-w-xl text-sm text-ink-800">
+          <% if avalanche.bottom_line.present? %>
+            <p class="line-clamp-3"><%= avalanche.bottom_line %></p>
+          <% end %>
+          <p class="mt-2">
+            <%= link_to "Read the full forecast on UAC", avalanche.forecast_url,
+              target: "_blank", rel: "noopener", class: "underline text-walnut-900 hover:text-clay-700" %>
+          </p>
+        </div>
+      </div>
+    <% else %>
+      <%= render "tour/source_failed", source: "Avalanche forecast", error: error %>
+    <% end %>
+  </div>
+</section>

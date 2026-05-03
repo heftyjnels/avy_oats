@@ -1,0 +1,71 @@
+/* Tour page (avyoats.com) — single-mode field card layout.
+   Mobile-first. Avoids dark-mode toggling so labels stay readable in bright
+   outdoor light. */
+
+.tour-page {
+  color-scheme: light;
+}
+
+.tour-body {
+  font-family: var(--font-sans);
+}
+
+.tour-container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 72rem;
+}
+
+@media (min-width: 768px) {
+  .tour-container {
+    padding-inline: 1.5rem;
+  }
+}
+
+.tour-masthead {
+  border-bottom: 1px solid var(--color-walnut-200);
+  background: linear-gradient(180deg, var(--color-sand-50) 0%, var(--color-sand-100) 100%);
+}
+
+.weather-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+}
+
+.weather-badge--measured {
+  background-color: var(--color-walnut-100);
+  color: var(--color-walnut-900);
+  border-color: var(--color-walnut-200);
+}
+
+.weather-badge--forecast {
+  background-color: var(--color-clay-100);
+  color: var(--color-clay-900);
+  border-color: var(--color-clay-200);
+}
+
+.weather-card__chart canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.avalanche-rose {
+  flex-shrink: 0;
+  color: var(--color-walnut-900);
+}
+
+.camera-tile {
+  min-height: 9rem;
+}
+
+.camera-tile img {
+  background-color: var(--color-walnut-700);
+}

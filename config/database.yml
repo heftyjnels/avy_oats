@@ -27,7 +27,7 @@ default: &default
 development:
   primary:
     <<: *default
-    database: jumpstart_development
+    database: avy_oats_development
 
     # The specified database role being used to connect to postgres.
     # To create additional roles in postgres see `$ createuser --help`.
@@ -58,15 +58,15 @@ development:
 
   cache:
     <<: *default
-    database: jumpstart_development_cache
+    database: avy_oats_development_cache
     migrations_paths: db/cache_migrate
   queue:
     <<: *default
-    database: jumpstart_development_queue
+    database: avy_oats_development_queue
     migrations_paths: db/queue_migrate
   cable:
     <<: *default
-    database: jumpstart_development_cable
+    database: avy_oats_development_cable
     migrations_paths: db/cable_migrate
 
 # Warning: The database defined as "test" will be erased and
@@ -74,7 +74,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: jumpstart_test
+  database: avy_oats_test
 
 staging:
   primary: &primary_staging

@@ -1,0 +1,9 @@
+{
+  "latitude": 40.5829,
+  "longitude": -111.6556,
+  "timezone": "America/Denver",
+  "daily": {
+    "time": ["2026-05-03"],
+    "uv_index_max": [7.4]
+  }
+}

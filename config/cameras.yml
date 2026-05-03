@@ -1,0 +1,79 @@
+# Curated camera tiles for the avyoats.com tour page.
+#
+# Each tile renders an <img> snapshot first; if the snapshot URL returns a 4xx
+# (some UDOT/Snowbird endpoints do that for direct hotlinking) the Stimulus
+# controller swaps it to a "View on source" link tile so the page still works.
+#
+# Image URLs are best-effort; link URLs always point at the official source.
+
+shared:
+  little_cottonwood: &little_cottonwood
+    - name: "SR-209/SR-210 Intersection"
+      image_url: "https://udottraffic.utah.gov/1_devices/aux16245.jpeg"
+      link_url: "https://udottraffic.utah.gov/map/Cctv/16245"
+      attribution: "UDOT"
+    - name: "White Pine"
+      image_url: "https://udottraffic.utah.gov/1_devices/aux16213.jpeg"
+      link_url: "https://udottraffic.utah.gov/map/Cctv/16213"
+      attribution: "UDOT"
+    - name: "Alta Bypass"
+      image_url: "https://udottraffic.utah.gov/1_devices/aux16265.jpeg"
+      link_url: "https://udottraffic.utah.gov/map/Cctv/16265"
+      attribution: "UDOT"
+    - name: "Alta"
+      image_url: "https://udottraffic.utah.gov/1_devices/aux16215.jpeg"
+      link_url: "https://udottraffic.utah.gov/map/Cctv/16215"
+      attribution: "UDOT"
+  big_cottonwood: &big_cottonwood
+    - name: "Wasatch Blvd / SR-190"
+      image_url: "https://udottraffic.utah.gov/1_devices/aux16250.jpeg"
+      link_url: "https://udottraffic.utah.gov/map/Cctv/16250"
+      attribution: "UDOT"
+    - name: "S-Curves"
+      image_url: "https://udottraffic.utah.gov/1_devices/aux16221.jpeg"
+      link_url: "https://udottraffic.utah.gov/map/Cctv/16221"
+      attribution: "UDOT"
+    - name: "Solitude"
+      image_url: "https://udottraffic.utah.gov/1_devices/aux16224.jpeg"
+      link_url: "https://udottraffic.utah.gov/map/Cctv/16224"
+      attribution: "UDOT"
+    - name: "Brighton Circle"
+      image_url: "https://udottraffic.utah.gov/1_devices/aux16225.jpeg"
+      link_url: "https://udottraffic.utah.gov/map/Cctv/16225"
+      attribution: "UDOT"
+  resorts: &resorts
+    - name: "Snowbird Snowstake"
+      image_url: "https://common.snowbird.com/Cams/snowstake.jpg"
+      link_url: "https://www.snowbird.com/mountain-report/webcams/"
+      attribution: "Snowbird"
+    - name: "Snowbird Little Cloud"
+      image_url: "https://common.snowbird.com/Cams/littlecloud.jpg"
+      link_url: "https://www.snowbird.com/mountain-report/webcams/"
+      attribution: "Snowbird"
+    - name: "Alta Snow Stake"
+      image_url: "https://www.alta.com/webcams/snow-stake.jpg"
+      link_url: "https://www.alta.com/conditions/webcams"
+      attribution: "Alta"
+    - name: "Brighton Molly Greens"
+      image_url: "https://common.brightonresort.com/site/cams/mollys-cam.jpg"
+      link_url: "https://www.brightonresort.com/the-mountain/conditions/webcams/"
+      attribution: "Brighton"
+    - name: "Brighton Top of Crest 6"
+      image_url: "https://common.brightonresort.com/site/cams/crest-cam.jpg"
+      link_url: "https://www.brightonresort.com/the-mountain/conditions/webcams/"
+      attribution: "Brighton"
+
+development:
+  little_cottonwood: *little_cottonwood
+  big_cottonwood: *big_cottonwood
+  resorts: *resorts
+
+test:
+  little_cottonwood: *little_cottonwood
+  big_cottonwood: *big_cottonwood
+  resorts: *resorts
+
+production:
+  little_cottonwood: *little_cottonwood
+  big_cottonwood: *big_cottonwood
+  resorts: *resorts

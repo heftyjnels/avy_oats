@@ -1,0 +1,8 @@
+{
+  "region": "salt-lake",
+  "forecast_issued_at": "2026-05-03T06:30:00-06:00",
+  "forecaster": "Drew Hardesty",
+  "overall_danger_rose": [3, 4, 4, 3, 2, 2, 1, 2],
+  "bottom_line": "Considerable danger remains on upper-elevation north and east aspects where wind-loaded slabs continue to be reactive.",
+  "forecast_url": "https://utahavalanchecenter.org/forecast/salt-lake"
+}

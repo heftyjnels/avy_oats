@@ -1,0 +1,24 @@
+<figure class="camera-tile group relative overflow-hidden rounded-lg border border-walnut-200 bg-walnut-900 text-sand-50 shadow-sm"
+        data-controller="camera-tile"
+        data-camera-tile-link-url-value="<%= camera[:link_url] %>"
+        data-camera-tile-name-value="<%= camera[:name] %>">
+  <a href="<%= camera[:link_url] %>" target="_blank" rel="noopener" class="block aspect-video">
+    <img
+      data-camera-tile-target="image"
+      src="<%= camera[:image_url] %>"
+      alt="<%= camera[:name] %> camera snapshot"
+      loading="lazy"
+      decoding="async"
+      referrerpolicy="no-referrer"
+      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]">
+    <div data-camera-tile-target="fallback" class="absolute inset-0 hidden flex-col items-center justify-center gap-2 bg-walnut-900 p-4 text-center">
+      <p class="text-sm font-semibold"><%= camera[:name] %></p>
+      <p class="text-xs text-sand-200">Snapshot unavailable. Open the source page for the live feed.</p>
+      <span class="mt-1 inline-flex items-center gap-1 rounded-full bg-clay-700 px-2 py-1 text-xs font-medium text-sand-50">View on <%= camera[:attribution] %></span>
+    </div>
+  </a>
+  <figcaption class="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 bg-gradient-to-t from-walnut-900/90 to-transparent px-3 py-2 text-xs">
+    <span class="font-medium"><%= camera[:name] %></span>
+    <span class="text-sand-200"><%= camera[:attribution] %></span>
+  </figcaption>
+</figure>

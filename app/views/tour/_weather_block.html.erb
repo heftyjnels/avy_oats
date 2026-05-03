@@ -1,0 +1,56 @@
+<section class="weather-block py-6" aria-label="Snowbird-area weather">
+  <div class="flex items-baseline justify-between gap-4">
+    <h2 class="text-xl font-semibold text-walnut-900">Snowbird weather</h2>
+    <% if weather.present? && weather.latest_label %>
+      <p class="text-xs text-ink-700">
+        Station <code class="font-mono"><%= weather.station_id %></code> · last reading <%= weather.latest_label %>
+      </p>
+    <% end %>
+  </div>
+
+  <% if weather.present? %>
+    <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <%= render "tour/weather_card",
+        title: "Temperature",
+        unit: "°F",
+        latest: weather.latest_temperature,
+        chart_type: "temperature",
+        series: weather.temperature_series,
+        badge: "measured",
+        badge_label: "Measured",
+        missing: weather.missing_metrics.include?(:temperature) %>
+
+      <%= render "tour/weather_card",
+        title: "Wind speed",
+        unit: "mph",
+        latest: weather.latest_wind_speed,
+        chart_type: "wind_speed",
+        series: weather.wind_speed_series,
+        badge: "measured",
+        badge_label: "Measured",
+        missing: weather.missing_metrics.include?(:wind_speed) %>
+
+      <%= render "tour/weather_card",
+        title: "Wind direction",
+        unit: "°",
+        latest: weather.latest_wind_direction,
+        chart_type: "wind_direction",
+        series: weather.wind_direction_series,
+        badge: "measured",
+        badge_label: "Measured",
+        missing: weather.missing_metrics.include?(:wind_direction) %>
+
+      <%= render "tour/weather_card",
+        title: "Cloud cover",
+        unit: "%",
+        latest: weather.cloud_cover_series.last&.dig(:v)&.round,
+        chart_type: "cloud_cover",
+        series: weather.cloud_cover_series,
+        badge: "forecast",
+        badge_label: "Forecast",
+        missing: weather.missing_metrics.include?(:cloud_cover) %>
+    </div>
+  <% else %>
+    <%= render "tour/source_failed", source: "Weather", error: error %>
+  <% end %>
+</section>

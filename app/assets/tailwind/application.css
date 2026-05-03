@@ -24,6 +24,29 @@
   --color-gray-800: var(--color-neutral-800);
   --color-gray-900: var(--color-neutral-900);
   --color-gray-950: var(--color-neutral-950);
+
+  /* avyoats tour palette — sand/clay/walnut/ink. Tested for WCAG 4.5:1 body
+     contrast against --color-sand-50. Avoid pairing ink-700 with sand-200+. */
+  --color-sand-50: #faf6ee;
+  --color-sand-100: #f3ebd9;
+  --color-sand-200: #e8dcbf;
+  --color-sand-300: #d9c89e;
+
+  --color-clay-50: #efe2cd;
+  --color-clay-100: #e3cdab;
+  --color-clay-200: #dcc6a3;
+  --color-clay-500: #b07a3a;
+  --color-clay-700: #8a5a2b;
+  --color-clay-900: #5e3c1a;
+
+  --color-walnut-100: #d6c0a0;
+  --color-walnut-200: #b89770;
+  --color-walnut-700: #4a361f;
+  --color-walnut-900: #2e1f10;
+
+  --color-ink-700: #4a3d2e;
+  --color-ink-800: #2f261a;
+  --color-ink-900: #1a140d;
 }
 
 @import "./themes/dark.css" layer(theme);
@@ -51,4 +74,5 @@
 @import "./components/typography.css" layer(components);
 @import "./components/wells.css" layer(components);
 @import "./components/braintree.css" layer(components);
+@import "./components/tour.css" layer(components);
 @import "./components/lexxy.css";

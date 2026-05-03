@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     # get "/dashboard", to: "dashboard#show", as: :user_root
   end
 
-  # Public marketing homepage
-  root to: "public#index"
+  # Public single-page tour dashboard for avyoats.com
+  root to: "tour#show"
 end

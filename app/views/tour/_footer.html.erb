@@ -1,0 +1,28 @@
+<footer class="tour-footer mt-8 border-t border-walnut-200 bg-sand-100 py-6 text-sm text-ink-700">
+  <div class="tour-container grid grid-cols-1 gap-3 sm:grid-cols-2">
+    <div>
+      <p class="font-semibold text-walnut-900">Sources</p>
+      <ul class="mt-1 space-y-1">
+        <li>
+          <a class="underline hover:text-clay-700" target="_blank" rel="noopener" href="https://utahavalanchecenter.org/forecast/salt-lake">Utah Avalanche Center — Salt Lake forecast</a>
+        </li>
+        <li>
+          <a class="underline hover:text-clay-700" target="_blank" rel="noopener" href="https://api.weather.gov">National Weather Service observations</a>
+        </li>
+        <li>
+          <a class="underline hover:text-clay-700" target="_blank" rel="noopener" href="https://open-meteo.com">Open-Meteo cloud cover and UV forecast</a>
+        </li>
+        <li>
+          <a class="underline hover:text-clay-700" target="_blank" rel="noopener" href="https://udottraffic.utah.gov">UDOT canyon cameras</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sm:text-right">
+      <p>Conditions in the Cottonwoods change fast. Check official forecasts before driving up.</p>
+      <p class="mt-1 text-xs">Snapshot generated <%= snapshot.fetched_at.in_time_zone(Avyoats::TIME_ZONE).strftime("%a %b %-d %-l:%M %p %Z") %>.</p>
+      <% if Rails.env.development? && snapshot.errors.any? %>
+        <p class="mt-2 text-xs font-mono text-clay-700">errors: <%= snapshot.errors.inspect %></p>
+      <% end %>
+    </div>
+  </div>
+</footer>

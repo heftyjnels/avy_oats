@@ -1,0 +1,16 @@
+<section class="camera-strip py-6">
+  <header class="flex items-baseline justify-between gap-3">
+    <h2 class="text-xl font-semibold text-walnut-900"><%= title %></h2>
+    <p class="text-xs text-ink-700"><%= description %></p>
+  </header>
+
+  <% if cameras.present? %>
+    <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <% cameras.each do |camera| %>
+        <%= render "tour/camera_tile", camera: camera %>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="text-sm text-ink-700">No cameras configured.</p>
+  <% end %>
+</section>
